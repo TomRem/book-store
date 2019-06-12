@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export class Header extends Component {
     state = {
-        bookStoreName: "Black Book",
+        bookStoreName: "Black Moto",
         isCLicked: true,
         textColor: "white",
         backgroundColor: "black"
@@ -14,12 +14,12 @@ export class Header extends Component {
             this.setState({
                 textColor: "black",
                 backgroundColor: "white",
-                bookStoreName: "White Book"
+                bookStoreName: "White Moto"
             })
         }
         else {
             this.setState({
-                bookStoreName: "Black Book",
+                bookStoreName: "Black Moto",
                 textColor: "white",
                 backgroundColor: "black"
             })

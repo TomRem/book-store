@@ -17,9 +17,25 @@ describe('Header tests', () => {
         ReactDOM.unmountComponentAtNode(div);
     })
 
-    it('Hello World renders', () => {
+    it('Header changes text according to state', () => {
         const wrapper = shallow(<Header/>);
         // console.log(wrapper.debug());
-        expect(wrapper.find('div').text()).toBe('Header');
+        expect(wrapper.find('h1').text()).toBe('Black Moto');
+        wrapper.setState({
+            bookStoreName: "White Moto"
+        })
+        expect(wrapper.find('h1').text()).toBe('White Moto');
+    })
+
+    it('Header state changes after handleClick' , () => {
+        const wrapper = shallow(<Header/>);
+        expect(wrapper.state().bookStoreName).toBe('Black Moto');
+        wrapper.find('.col').simulate('click');
+        expect(wrapper.state().bookStoreName).toBe('White Moto');
+    })
+
+    it('Snapshot matches', () => {
+        const wrapper = shallow(<Header />);
+        expect(wrapper).toMatchSnapshot();
     })
 })

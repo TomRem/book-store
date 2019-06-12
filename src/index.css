@@ -3,19 +3,32 @@ body {
     padding: 0
 }
   
-    .app {
-        background-color: darkslateblue;
-    }
-    .header {
-        text-align: center;
-        background-color: cadetblue;
-    }
-    .inventory {
-        background-color: lawngreen;
-    }
-    .order {
-        background-color: tomato;
-    }
-    .adminPanel {
-        background-color: violet;
-    }
+.app {
+    background-color: darkslateblue;
+}
+.header {
+    text-align: center;
+    background-color: cadetblue;
+}
+
+.header div {
+    text-align: center;
+    background-color: cadetblue;
+    transition: all ease-in 320ms;
+}
+.inventory {
+    background-color: lawngreen;
+}
+.order {
+    background-color: tomato;
+}
+.adminPanel {
+    background-color: violet;
+    padding: 2rem;
+}
+.check {
+    margin-left: 2rem;
+}
+hr {
+    border:1px solid #000
+}

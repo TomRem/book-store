@@ -13,13 +13,14 @@ describe('Inventory tests', () => {
 
     it('Inventory renders without a problem', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<Inventory />, div);
+        const books = [];
+        ReactDOM.render(<Inventory books={books} />, div);
         ReactDOM.unmountComponentAtNode(div);
     })
 
-    it('Hello World renders', () => {
-        const wrapper = shallow(<Inventory/>);
-        // console.log(wrapper.debug());
-        expect(wrapper.find('i').text()).toBe('Inventory');
+    it('Snapshot matches', () => {
+        const books = [];
+        const wrapper = shallow(<Inventory books={books} />);
+        expect(wrapper).toMatchSnapshot();
     })
 })

@@ -13,13 +13,14 @@ describe('Order tests', () => {
 
     it('Order renders without a problem', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<Order />, div);
+        const order = [];
+        ReactDOM.render(<Order order={order} />, div);
         ReactDOM.unmountComponentAtNode(div);
     })
 
-    it('Hello World renders', () => {
-        const wrapper = shallow(<Order/>);
-        // console.log(wrapper.debug());
-        expect(wrapper.find('div').text()).toBe('zamowienie');
+    it('Snapshot matches', () => {
+        const order = [];
+        const wrapper = shallow(<Order order={order} />);
+        expect(wrapper).toMatchSnapshot();
     })
 })
